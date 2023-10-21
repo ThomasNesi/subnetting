@@ -24,10 +24,12 @@ namespace subnetting
             int host = int.Parse(host_box.Text);
             int sottoreti = int.Parse(sottoreti_box.Text);
             double CDIR = Math.Log(host + 2, 2) + Math.Log(sottoreti, 2);
+            int subnet = Convert.ToInt16(Math.Log(sottoreti,2));
+            int cdir = (subnet + 24);
             if (CDIR <= 8)
             {
                 classe_box.Text = ("Classe C");
-                CDIR_box.Text = "/" + CDIR;
+                CDIR_box.Text = "/" + cdir;
             }
             else if (CDIR <= 16)
             {
