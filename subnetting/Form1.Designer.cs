@@ -1,6 +1,6 @@
 ﻿namespace subnetting
 {
-    partial class Form1
+    partial class SM_box
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.CDIR_box = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +84,7 @@
             // 
             // calcolo_btn
             // 
-            this.calcolo_btn.Location = new System.Drawing.Point(245, 96);
+            this.calcolo_btn.Location = new System.Drawing.Point(230, 96);
             this.calcolo_btn.Name = "calcolo_btn";
             this.calcolo_btn.Size = new System.Drawing.Size(75, 23);
             this.calcolo_btn.TabIndex = 5;
@@ -92,7 +94,7 @@
             // 
             // classe_box
             // 
-            this.classe_box.Location = new System.Drawing.Point(369, 98);
+            this.classe_box.Location = new System.Drawing.Point(369, 67);
             this.classe_box.Name = "classe_box";
             this.classe_box.Size = new System.Drawing.Size(100, 20);
             this.classe_box.TabIndex = 6;
@@ -100,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(366, 82);
+            this.label4.Location = new System.Drawing.Point(366, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 7;
@@ -109,7 +111,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(372, 141);
+            this.label5.Location = new System.Drawing.Point(370, 106);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
             this.label5.TabIndex = 8;
@@ -117,16 +119,34 @@
             // 
             // CDIR_box
             // 
-            this.CDIR_box.Location = new System.Drawing.Point(373, 162);
+            this.CDIR_box.Location = new System.Drawing.Point(369, 122);
             this.CDIR_box.Name = "CDIR_box";
             this.CDIR_box.Size = new System.Drawing.Size(100, 20);
             this.CDIR_box.TabIndex = 9;
             // 
-            // Form1
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(368, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Subnet Mask";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(369, 174);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // SM_box
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.CDIR_box);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -137,7 +157,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.host_box);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "SM_box";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,6 +176,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CDIR_box;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
