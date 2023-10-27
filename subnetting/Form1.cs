@@ -21,30 +21,53 @@ namespace subnetting
 
         private void calcolo_btn_Click(object sender, EventArgs e)
         {
+            int subnetBits = GetSubnetBits(int.Parse(host_box.Text));
+            string subnetMask = CalculateSubnetMask(subnetBits);
             int host = int.Parse(host_box.Text);
             int sottoreti = int.Parse(sottoreti_box.Text);
-            double CDIR = Math.Log(host + 2, 2) + Math.Log(sottoreti, 2);
-            int subnet = Convert.ToInt16(Math.Log(sottoreti,2));
-            int cdir = (subnet + 24);
-            if (CDIR <= 8)
+            //double CDIR = Math.Log(host + 2, 2) + Math.Log(sottoreti, 2);
+            //int subnet = Convert.ToInt16(Math.Log(sottoreti,2));
+            string cdir = $"{subnetMask}/{subnetBits}";
+            if (Convert.ToInt16(cdir) <= 8)
             {
-                classe_box.Text = ("Classe C");
-                CDIR_box.Text = "/" + cdir;
+                indirizzi.Items.Add("Classe: C");
             }
-            else if (CDIR <= 16)
+            else if (Convert.ToInt16(cdir) <= 16)
             {
-                classe_box.Text = ("Classe B");
-                CDIR_box.Text = "/" + CDIR;
+                indirizzi.Items.Add("Classe: B");
             }
-            else if (CDIR <= 24)
+            else if (Convert.ToInt16(cdir) <= 24)
             {
-                classe_box.Text = ("Classe A");
-                CDIR_box.Text = "/" + CDIR;
+                indirizzi.Items.Add("Classe: A");
             }
-            else if (CDIR > 24)
+            indirizzi.Items.Add(subnetMask);
+        }
+        private int GetSubnetBits(int numHosts)
+        {
+            int bits = 0;
+            while ((int)Math.Pow(2, bits) - 2 < numHosts)
             {
-                classe_box.Text = ("Troppi host");
+                bits++;
             }
+            return bits;
+        }
+        private string CalculateSubnetMask(int subnetBits)
+        {
+            int[] maskParts = new int[4];
+            for (int i = 0; i < 4; i++)
+            {
+                if (subnetBits >= 8)
+                {
+                    maskParts[i] = 255;
+                    subnetBits -= 8;
+                }
+                else
+                {
+                    maskParts[i] = (int)(255 - (Math.Pow(2, 8 - subnetBits) - 1));
+                    subnetBits = 0;
+                }
+            }
+            return $"{maskParts[0]}.{maskParts[1]}.{maskParts[2]}.{maskParts[3]}";
         }
     }
 }
