@@ -34,12 +34,6 @@
             this.sottoreti_box = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.calcolo_btn = new System.Windows.Forms.Button();
-            this.classe_box = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.CDIR_box = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.subnetmask_box = new System.Windows.Forms.TextBox();
             this.indirizzi = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -85,7 +79,7 @@
             // 
             // calcolo_btn
             // 
-            this.calcolo_btn.Location = new System.Drawing.Point(230, 96);
+            this.calcolo_btn.Location = new System.Drawing.Point(48, 172);
             this.calcolo_btn.Name = "calcolo_btn";
             this.calcolo_btn.Size = new System.Drawing.Size(75, 23);
             this.calcolo_btn.TabIndex = 5;
@@ -93,60 +87,12 @@
             this.calcolo_btn.UseVisualStyleBackColor = true;
             this.calcolo_btn.Click += new System.EventHandler(this.calcolo_btn_Click);
             // 
-            // classe_box
-            // 
-            this.classe_box.Location = new System.Drawing.Point(144, 193);
-            this.classe_box.Name = "classe_box";
-            this.classe_box.Size = new System.Drawing.Size(100, 20);
-            this.classe_box.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(141, 174);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Classe";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(141, 217);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "CDIR";
-            // 
-            // CDIR_box
-            // 
-            this.CDIR_box.Location = new System.Drawing.Point(144, 233);
-            this.CDIR_box.Name = "CDIR_box";
-            this.CDIR_box.Size = new System.Drawing.Size(100, 20);
-            this.CDIR_box.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(141, 274);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Subnet Mask";
-            // 
-            // subnetmask_box
-            // 
-            this.subnetmask_box.Location = new System.Drawing.Point(144, 304);
-            this.subnetmask_box.Name = "subnetmask_box";
-            this.subnetmask_box.Size = new System.Drawing.Size(100, 20);
-            this.subnetmask_box.TabIndex = 11;
-            // 
             // indirizzi
             // 
             this.indirizzi.FormattingEnabled = true;
-            this.indirizzi.Location = new System.Drawing.Point(440, 28);
+            this.indirizzi.Location = new System.Drawing.Point(257, 28);
             this.indirizzi.Name = "indirizzi";
-            this.indirizzi.Size = new System.Drawing.Size(282, 303);
+            this.indirizzi.Size = new System.Drawing.Size(531, 303);
             this.indirizzi.TabIndex = 12;
             // 
             // SM_box
@@ -155,12 +101,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.indirizzi);
-            this.Controls.Add(this.subnetmask_box);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.CDIR_box);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.classe_box);
             this.Controls.Add(this.calcolo_btn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.sottoreti_box);
@@ -182,12 +122,6 @@
         private System.Windows.Forms.TextBox sottoreti_box;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button calcolo_btn;
-        private System.Windows.Forms.TextBox classe_box;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox CDIR_box;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox subnetmask_box;
         private System.Windows.Forms.ListBox indirizzi;
     }
 }

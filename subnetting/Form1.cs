@@ -21,37 +21,34 @@ namespace subnetting
 
         private void calcolo_btn_Click(object sender, EventArgs e)
         {
-            int subnetBits = GetSubnetBits(int.Parse(host_box.Text));
-            string subnetMask = CalculateSubnetMask(subnetBits);
+            int subnetBits = SubnetBits(int.Parse(host_box.Text));
+            string subnetMask = CalcoloSubnetMask(subnetBits);
             int host = int.Parse(host_box.Text);
             int sottoreti = int.Parse(sottoreti_box.Text);
+            char Classe = Classeindirizzo(subnetBits);
             //double CDIR = Math.Log(host + 2, 2) + Math.Log(sottoreti, 2);
             //int subnet = Convert.ToInt16(Math.Log(sottoreti,2));
-            string cdir = $"{subnetMask}/{subnetBits}";
-            if (Convert.ToInt16(cdir) <= 8)
-            {
-                indirizzi.Items.Add("Classe: C");
-            }
-            else if (Convert.ToInt16(cdir) <= 16)
-            {
-                indirizzi.Items.Add("Classe: B");
-            }
-            else if (Convert.ToInt16(cdir) <= 24)
-            {
-                indirizzi.Items.Add("Classe: A");
-            }
-            indirizzi.Items.Add(subnetMask);
+            string cdir = $"/{subnetBits}";
+            indirizzi.Items.Add("Subnet mask: " + subnetMask + "  CDIR: " + cdir + "  Classe: " + Classe);
         }
-        private int GetSubnetBits(int numHosts)
+        private int SubnetBits(int numHosts)
         {
             int bits = 0;
             while ((int)Math.Pow(2, bits) - 2 < numHosts)
             {
                 bits++;
             }
-            return bits;
+            bits -= 1;
+            int bit = 0;
+            int num = 0;
+            if (bits <= 16)
+            {
+                num = 16 - bits;
+                bit = 16 + num;
+            }
+            return bit;
         }
-        private string CalculateSubnetMask(int subnetBits)
+        private string CalcoloSubnetMask(int subnetBits)
         {
             int[] maskParts = new int[4];
             for (int i = 0; i < 4; i++)
@@ -68,6 +65,25 @@ namespace subnetting
                 }
             }
             return $"{maskParts[0]}.{maskParts[1]}.{maskParts[2]}.{maskParts[3]}";
+        }
+        static char Classeindirizzo(int subnetBits)
+        {
+            if (subnetBits >= 24)
+            {
+                return 'C';
+            }
+            else if (subnetBits >= 16)
+            {
+                return 'B';
+            }
+            else if (subnetBits >= 8)
+            {
+                return 'A';
+            }
+            else
+            {
+                return ' ';
+            }
         }
     }
 }
