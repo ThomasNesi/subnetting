@@ -23,11 +23,7 @@ namespace subnetting
         {
             int subnetBits = SubnetBits(int.Parse(host_box.Text));
             string subnetMask = CalcoloSubnetMask(subnetBits);
-            int host = int.Parse(host_box.Text);
-            int sottoreti = int.Parse(sottoreti_box.Text);
             char Classe = Classeindirizzo(subnetBits);
-            //double CDIR = Math.Log(host + 2, 2) + Math.Log(sottoreti, 2);
-            //int subnet = Convert.ToInt16(Math.Log(sottoreti,2));
             string cdir = $"/{subnetBits}";
             indirizzi.Items.Add("Subnet mask: " + subnetMask + "  CDIR: " + cdir + "  Classe: " + Classe);
         }
@@ -38,15 +34,7 @@ namespace subnetting
             {
                 bits++;
             }
-            bits -= 1;
-            int bit = 0;
-            int num = 0;
-            if (bits <= 16)
-            {
-                num = 16 - bits;
-                bit = 16 + num;
-            }
-            return bit;
+            return bits;
         }
         private string CalcoloSubnetMask(int subnetBits)
         {
@@ -82,7 +70,7 @@ namespace subnetting
             }
             else
             {
-                return ' ';
+                return 'A';
             }
         }
     }
