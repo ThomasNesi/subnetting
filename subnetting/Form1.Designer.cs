@@ -56,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 106);
+            this.label2.Location = new System.Drawing.Point(45, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 13);
             this.label2.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             // sottoreti_box
             // 
-            this.sottoreti_box.Location = new System.Drawing.Point(48, 122);
+            this.sottoreti_box.Location = new System.Drawing.Point(48, 106);
             this.sottoreti_box.Name = "sottoreti_box";
             this.sottoreti_box.Size = new System.Drawing.Size(100, 20);
             this.sottoreti_box.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             // calcolo_btn
             // 
-            this.calcolo_btn.Location = new System.Drawing.Point(48, 172);
+            this.calcolo_btn.Location = new System.Drawing.Point(48, 132);
             this.calcolo_btn.Name = "calcolo_btn";
             this.calcolo_btn.Size = new System.Drawing.Size(75, 23);
             this.calcolo_btn.TabIndex = 5;
@@ -90,9 +90,9 @@
             // indirizzi
             // 
             this.indirizzi.FormattingEnabled = true;
-            this.indirizzi.Location = new System.Drawing.Point(257, 28);
+            this.indirizzi.Location = new System.Drawing.Point(204, 12);
             this.indirizzi.Name = "indirizzi";
-            this.indirizzi.Size = new System.Drawing.Size(531, 303);
+            this.indirizzi.Size = new System.Drawing.Size(516, 420);
             this.indirizzi.TabIndex = 12;
             // 
             // SM_box

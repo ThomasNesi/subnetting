@@ -21,6 +21,7 @@ namespace subnetting
 
         private void calcolo_btn_Click(object sender, EventArgs e)
         {
+            indirizzi.Items.Clear();
             int subnetBits = SubnetBits(int.Parse(host_box.Text));
             string subnetMask = CalcoloSubnetMask(subnetBits);
             char Classe = Classeindirizzo(subnetBits);
@@ -34,7 +35,7 @@ namespace subnetting
             {
                 bits++;
             }
-            return bits;
+            return bits+8;
         }
         private string CalcoloSubnetMask(int subnetBits)
         {
